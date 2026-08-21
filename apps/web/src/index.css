@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Professional Aviation Design Tokens (HSL format) */
+    --background: 0 0% 100%;
+    --foreground: 220 50% 10%;
+    
+    /* Primary: Deep Aviation Navy */
+    --primary: 215 100% 20%;
+    --primary-foreground: 0 0% 100%;
+    
+    /* Secondary: Professional Gray */
+    --secondary: 215 15% 45%;
+    --secondary-foreground: 0 0% 100%;
+    
+    /* Accent: Aviation Gold/Orange */
+    --accent: 35 90% 50%;
+    --accent-foreground: 220 50% 10%;
+    
+    /* Muted/Cards */
+    --muted: 210 20% 96%;
+    --muted-foreground: 215 16% 47%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 220 50% 10%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 50% 10%;
+    
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 215 100% 20%;
+    
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --radius: 0.75rem;
+
+    /* Transportation/Legacy specific properties */
+    --audit-navy: 215 100% 20%;
+    --audit-blue: 210 100% 40%;
+    --audit-teal: 180 100% 33%;
+    --audit-purple: 260 60% 50%;
+    --audit-green: 140 60% 40%;
+    --audit-light-blue: 210 40% 98%;
+    
+    --transport-primary: 215 100% 20%;
+    --transport-surface: 213 50% 95%;
+    --transport-card: 0 0% 100%;
+
+    /* Brand Custom Properties */
+    --brand-blue: 221 83% 41%;
+    --brand-teal: 180 100% 33%;
+    --brand-orange: 35 90% 50%;
+
+    /* Luxury Aircraft Dealership Tokens */
+    --luxury-navy: 222 47% 11%;
+    --luxury-gold: 43 74% 49%;
+    --luxury-white: 0 0% 100%;
+
+    /* Premium Custom Properties */
+    --shadow-premium: 0 10px 40px -10px rgba(0, 0, 0, 0.08);
+    --shadow-premium-hover: 0 20px 40px -10px rgba(0, 0, 0, 0.15);
+    --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+
+    /* Compact Layout Tokens for Redesigned Sections */
+    --padding-compact-sm: 0.75rem; /* p-3 */
+    --padding-compact-md: 1rem; /* p-4 */
+    --gap-compact-sm: 1rem; /* gap-4 */
+    --gap-compact-md: 1.5rem; /* gap-6 */
+    --line-height-compact-tight: 1.25; /* leading-tight */
+    --line-height-compact-snug: 1.375; /* leading-snug */
+  }
+
+  .dark {
+    --background: 220 50% 5%;
+    --foreground: 210 40% 98%;
+    
+    --primary: 215 100% 60%;
+    --primary-foreground: 220 50% 5%;
+    
+    --secondary: 215 20% 65%;
+    --secondary-foreground: 220 50% 5%;
+    
+    --accent: 35 90% 55%;
+    --accent-foreground: 220 50% 5%;
+    
+    --muted: 217 32% 17%;
+    --muted-foreground: 215 20% 65%;
+    
+    --card: 220 40% 8%;
+    --card-foreground: 210 40% 98%;
+    
+    --popover: 220 40% 8%;
+    --popover-foreground: 210 40% 98%;
+    
+    --border: 217 32% 17%;
+    --input: 217 32% 17%;
+    --ring: 215 100% 60%;
+    
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    /* Transportation/Legacy specific properties */
+    --audit-navy: 215 100% 60%;
+    --audit-blue: 210 100% 50%;
+    --audit-teal: 180 100% 45%;
+    --audit-purple: 260 60% 65%;
+    --audit-green: 140 60% 55%;
+    --audit-light-blue: 220 40% 8%;
+    
+    --transport-primary: 215 100% 60%;
+    --transport-surface: 217 32% 14%;
+    --transport-card: 220 40% 8%;
+
+    /* Brand Custom Properties */
+    --brand-blue: 221 83% 65%;
+    --brand-teal: 180 100% 45%;
+    --brand-orange: 35 90% 55%;
+
+    /* Luxury Aircraft Dealership Tokens */
+    --luxury-navy: 220 50% 5%;
+    --luxury-gold: 45 93% 60%;
+    --luxury-white: 210 40% 98%;
+
+    /* Premium Custom Properties (Dark Mode) */
+    --shadow-premium: 0 10px 40px -10px rgba(0, 0, 0, 0.3);
+    --shadow-premium-hover: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight text-balance;
+    letter-spacing: -0.02em;
+  }
+
+  p {
+    @apply leading-[1.625] max-w-[65ch];
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .bg-gradient-navy-teal {
+    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--audit-teal)) 100%);
+  }
+
+  .bg-gradient-navy-sky {
+    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--audit-blue)) 100%);
+  }
+
+  .heading-underline {
+    @apply relative inline-block;
+  }
+  .heading-underline::after {
+    content: '';
+    @apply absolute -bottom-3 left-0 w-16 h-1.5 rounded-full bg-accent;
+  }
+  .heading-underline-center {
+    @apply relative inline-block;
+  }
+  .heading-underline-center::after {
+    content: '';
+    @apply absolute -bottom-3 left-1/2 -translate-x-1/2 w-16 h-1.5 rounded-full bg-accent;
+  }
+  
+  /* Hero image and overlay utilities */
+  .hero-overlay-dark {
+    @apply absolute inset-0 bg-slate-950/70 mix-blend-multiply;
+  }
+  
+  .text-shadow-hero {
+    text-shadow: 0 2px 10px rgba(0,0,0,0.6), 0 4px 20px rgba(0,0,0,0.4);
+  }
+
+  /* Brand Logo Sizing */
+  .brand-logo-horizontal {
+    @apply h-10 sm:h-12 md:h-14 w-auto object-contain transition-all duration-300;
+    filter: brightness(1.1) contrast(1.05);
+    mix-blend-mode: screen;
+  }
+
+  .brand-logo-horizontal:hover {
+    @apply scale-105;
+    filter: brightness(1.15) contrast(1.1);
+  }
+
+  /* Premium Design Utilities */
+  .card-premium {
+    box-shadow: var(--shadow-premium);
+    transition: var(--transition-smooth);
+  }
+  
+  .card-premium:hover {
+    box-shadow: var(--shadow-premium-hover);
+    transform: translateY(-4px);
+  }
+
+  .btn-transition {
+    transition: var(--transition-smooth);
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  /* Compact Design Utilities */
+  .p-compact-sm { padding: var(--padding-compact-sm); }
+  .p-compact-md { padding: var(--padding-compact-md); }
+  .gap-compact-sm { gap: var(--gap-compact-sm); }
+  .gap-compact-md { gap: var(--gap-compact-md); }
+  .leading-compact-tight { line-height: var(--line-height-compact-tight); }
+  .leading-compact-snug { line-height: var(--line-height-compact-snug); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0; 
+    transform: translateY(30px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
