@@ -126,32 +126,7 @@ const HomePage = () => {
           </div>
         </section>
 
-        {/* About Section */}
-        <section className="py-24 bg-background">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-              <div className="relative">
-                <div className="absolute -inset-4 bg-gradient-navy-teal opacity-10 rounded-3xl blur-lg"></div>
-                <img src="https://horizons-cdn.hostinger.com/47a882c9-2ca7-4b34-aae3-19f8817a45d6/487312060_641985175241839_2924601685489027037_n-Sukxh.jpg" alt="Aviation Professional" className="relative rounded-2xl shadow-xl w-full h-[450px] object-cover border border-border" />
-              </div>
-              <div>
-                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8 heading-underline">Expertise Built on Precision</h2>
-                <p className="text-muted-foreground text-lg leading-relaxed mb-8 mt-8">
-                  Aeronautics LLC is a premier B2B aviation support firm bridging international standards with Mongolian infrastructure. We ensure that global operators experience uncompromising reliability while navigating our airspace.
-                </p>
-                <ul className="space-y-4 mb-10">
-                  {['IS-BAH aligned operational structures', 'ISO 9001 compliant management systems', 'Full ICAO standard adherence'].map((item, i) => <li key={i} className="flex items-center text-foreground font-medium text-lg bg-muted/50 p-3 rounded-lg border border-border">
-                      <CheckCircle className="w-6 h-6 text-[hsl(var(--audit-teal))] mr-4 shrink-0" />
-                      {item}
-                    </li>)}
-                </ul>
-                <Link to="/about" className="px-6 py-3 bg-primary text-primary-foreground font-semibold rounded-lg hover:bg-primary/90 transition-colors shadow-md inline-flex items-center">
-                  Learn more about our company <span className="ml-2">&rarr;</span>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
+        
 
       </main>
     </>;
